@@ -15,17 +15,24 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['PhantomJS'],
 
     plugins : [
             'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-jasmine'
+            'karma-phantomjs-launcher',
+            'karma-jasmine',
+            'karma-htmlfile-reporter'
             ],
 
     junitReporter : {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
+    },
+
+    reporters: ['progress', 'html'],
+
+    htmlReporter: {
+      outputFile: 'test_out/units.html'
     }
 
   });
