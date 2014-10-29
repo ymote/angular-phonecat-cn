@@ -12,8 +12,8 @@ phonecatApp.controller('PhoneListCtrl', function($scope) {
      'snippet': 'The Next, Next Generation tablet.'},
     {'name': 'MOTOROLA XOOM™',
      'snippet': 'The Next, Next Generation tablet.'}
-     //增加 Samsung Galaxy Tab
-
-
   ];
+
+  //增加$scope.hello数据模型
+  
 });
