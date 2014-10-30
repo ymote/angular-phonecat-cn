@@ -2,10 +2,13 @@
 <html lang="en" ng-app="phonecatApp">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <title>Google Phone Gallery</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
-  <script src="bower_components/angular/angular.js"></script>
+  <script src="lib/angular.js"></script>
   <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="PhoneListCtrl">
@@ -32,6 +35,11 @@
             <p>{{phone.snippet}}</p>
           </li>
         </ul>
+
+        <div class="phones-json">
+          <!-- 添加一个{{phones | json}}绑定，观察json格式的手机列表 -->
+
+        </div>
 
       </div>
     </div>
