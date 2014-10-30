@@ -2,10 +2,14 @@
 <html lang="en" ng-app="phonecatApp">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />    
+  <!-- 将搜索关键词显示在标题上 -->
   <title>Google Phone Gallery</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="lib/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
-  <script src="bower_components/angular/angular.js"></script>
+  <script src="lib/angular.js"></script>
   <script src="js/controllers.js"></script>
 </head>
 <body ng-controller="PhoneListCtrl">
@@ -16,6 +20,9 @@
         <!--Sidebar content-->
 
         Search: <input ng-model="query">
+        <p class="query">
+        输入的关键词是： <!-- 显示搜索关键词-->
+        </p>
 
       </div>
       <div class="col-md-10">
