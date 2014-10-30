@@ -14,7 +14,7 @@ describe('PhoneCat controllers', function() {
     }));
 
 
-    it('should create "phones" model with 3 phones', inject(function($controller) {
+    it('should create "phones" model with 3 phones', inject(function() {
       expect(scope.phones.length).toBe(3);
     }));
 
