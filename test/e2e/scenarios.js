@@ -23,7 +23,8 @@ describe('PhoneCat App', function() {
 
       query.clear();
       query.sendKeys('motorola');
-      expect(phoneList.count()).toBe(2);
+      //phoneList这时应该有几个phone?
+      expect(phoneList.count()).toBe(?);
     });
 
 
@@ -47,9 +48,10 @@ describe('PhoneCat App', function() {
 
       element(by.model('orderProp')).element(by.css('option[value="name"]')).click();
 
+      //观察页面，当我们按照名字来排列的时候，排列的顺序应该是什么？
       expect(getNames()).toEqual([
-        "MOTOROLA XOOM\u2122",
-        "Motorola XOOM\u2122 with Wi-Fi"
+        "",
+        ""
       ]);
     });
   });
