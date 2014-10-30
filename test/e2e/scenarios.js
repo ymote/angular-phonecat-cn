@@ -23,7 +23,8 @@ describe('PhoneCat App', function() {
 
       query.clear();
       query.sendKeys('motorola');
-      expect(phoneList.count()).toBe(8);
+      //现在包含motorola的手机有几部呢？
+      expect(phoneList.count()).toBe(0);
     });
 
 
@@ -62,5 +63,18 @@ describe('PhoneCat App', function() {
         expect(url.split('#')[1]).toBe('/phones/nexus-s');
       });
     });
+
+    //完成以下测试内容
+    it('should render phone specific links for motorola phones', function() {
+      var query = element(by.model('query'));
+      query.sendKeys('motorola');
+      //点击第一部手机的链接
+      //element(by.css('.phones li a')).click();
+      browser.getLocationAbsUrl().then(function(url) {
+        //现在网页的地址应该是什么呢？
+        expect(url.split('#')[1]).toBe('enter link here ...');
+      });
+    });
+
   });
 });
