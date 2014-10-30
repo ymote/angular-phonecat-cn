@@ -25,5 +25,15 @@ describe('PhoneCat App', function() {
       query.sendKeys('motorola');
       expect(phoneList.count()).toBe(2);
     });
+
+    //增加测试模块
+
+
+
+
+
+
+
+    
   });
 });
