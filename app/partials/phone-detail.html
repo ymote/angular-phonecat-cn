@@ -15,7 +15,9 @@
     <span>Availability and Networks</span>
     <dl>
       <dt>Availability</dt>
-      <dd ng-repeat="availability in phone.availability">{{availability}}</dd>
+      <!-- availability是一个数组，使用ng-repeat和dd标签输出其中所有的元素-->
+      <!-- dd标签的HTML写法： <dd>...</dd> -->
+
     </dl>
   </li>
   <li>
@@ -32,10 +34,11 @@
   <li>
     <span>Storage and Memory</span>
     <dl>
+      <!-- 从storage属性中使用dd标签输出ram和flash-->
       <dt>RAM</dt>
-      <dd>{{phone.storage.ram}}</dd>
+      <dd><!-- ram --></dd>
       <dt>Internal Storage</dt>
-      <dd>{{phone.storage.flash}}</dd>
+      <dd><!-- storage --></dd>
     </dl>
   </li>
   <li>
