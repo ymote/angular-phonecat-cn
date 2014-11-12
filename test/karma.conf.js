@@ -4,9 +4,9 @@ module.exports = function(config){
     basePath : '../',
 
     files : [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/lib/angular.js',
+      'app/lib/angular-route.js',
+      'app/lib/angular-mocks.js',
       'app/js/**/*.js',
       'test/unit/**/*.js'
     ],
@@ -18,7 +18,6 @@ module.exports = function(config){
     browsers : ['PhantomJS'],
 
     plugins : [
-            'karma-chrome-launcher',
             'karma-phantomjs-launcher',
             'karma-jasmine',
             'karma-htmlfile-reporter'
