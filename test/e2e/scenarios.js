@@ -26,14 +26,20 @@ describe('PhoneCat App', function() {
       expect(phoneList.count()).toBe(2);
     });
 
-    //增加测试模块
+
+    it('should display the current filter value within an element with id "status"',
+      function() {
+      //找到ng-model=query的输入框
+      var query = element(by.model('query'));
+
+      expect('查询id为status的HTML元素的内容')
+        .toMatch(/Current filter:\s*$/);
+
+      //清空query的值并输入nexus
 
 
-
-
-
-
-
-    
+      expect('查询id为status的HTML元素的内容')
+        .toMatch(/Current filter: nexus\s*$/);
+    });
   });
 });
