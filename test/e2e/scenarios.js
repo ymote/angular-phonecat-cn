@@ -5,7 +5,7 @@ describe('ng-repeat filter', function() {
   describe('index page', function() {
 
     beforeEach(function() {
-      browser.get('index.html');
+      browser.get('app/index.html');
     });
 
     it('should show numbers 0 to 7 in a table', function() {
