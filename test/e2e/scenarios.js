@@ -11,46 +11,15 @@ describe('PhoneCat App', function() {
     });
 
 
-    it('should filter the phone list as user types into the search box', function() {
-
-      var phoneList = element.all(by.repeater('phone in phones'));
-      var query = element(by.model('query'));
-
-      expect(phoneList.count()).toBe(20);
-
-      query.sendKeys('nexus');
-      expect(phoneList.count()).toBe(1);
-
-      query.clear();
-      query.sendKeys('motorola');
-      expect(phoneList.count()).toBe(8);
-    });
-
-
-    it('should be possible to control phone order via the drop down select box', function() {
-
-      var phoneNameColumn = element.all(by.repeater('phone in phones').column('{{phone.name}}'));
-      var query = element(by.model('query'));
-
-      function getNames() {
-        return phoneNameColumn.map(function(elm) {
-          return elm.getText();
-        });
-      }
-
-      query.sendKeys('tablet'); //let's narrow the dataset to make the test assertions shorter
-
-      expect(getNames()).toEqual([
-        "Motorola XOOM\u2122 with Wi-Fi",
-        "MOTOROLA XOOM\u2122"
-      ]);
-
-      element(by.model('orderProp')).element(by.css('option[value="name"]')).click();
-
-      expect(getNames()).toEqual([
-        "MOTOROLA XOOM\u2122",
-        "Motorola XOOM\u2122 with Wi-Fi"
-      ]);
+    it('should only show the first five phones', function() {
+      element.all(by.repeater('phone in phones')).then(function(phones){
+        expect(phones.length).toBe(5);
+        expect(phones[0].element(by.css('span')).getText()).toBe("Motorola XOOM\u2122 with Wi-Fi");
+        expect(phones[1].element(by.css('span')).getText()).toBe("MOTOROLA XOOM\u2122");
+        expect(phones[2].element(by.css('span')).getText()).toBe("MOTOROLA ATRIX\u2122 4G");
+        expect(phones[3].element(by.css('span')).getText()).toBe("Dell Streak 7");
+        expect(phones[4].element(by.css('span')).getText()).toBe("Samsung Gem\u2122");
+      });
     });
   });
 });

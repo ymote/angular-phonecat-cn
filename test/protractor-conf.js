@@ -37,13 +37,6 @@ exports.config = {
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
-  },
-
-  onPrepare: function() {
-    // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
-    jasmine.getEnv().addReporter(new HtmlReporter({
-      baseDirectory: '/root/repo/test_e2e'
-    }));
   }
 
 };
