@@ -24,7 +24,7 @@ describe('PhoneCat App', function() {
       query.clear();
       query.sendKeys('motorola');
       //现在包含motorola的手机有几部呢？
-      expect(phoneList.count()).toBe(0);
+      expect(phoneList.count()).toBe(8);
     });
 
 
@@ -72,7 +72,7 @@ describe('PhoneCat App', function() {
       //element(by.css('.phones li a')).click();
       browser.getLocationAbsUrl().then(function(url) {
         //现在网页的地址应该是什么呢？
-        expect(url.split('#')[1]).toBe('enter link here ...');
+        expect(url.split('#')[1]).toBe('/phones/motorola-xoom-with-wi-fi');
       });
     });
 
