@@ -18,50 +18,6 @@ describe('PhoneCat App', function() {
       browser.get('app/index.html#/phones');
     });
 
-
-    it('should filter the phone list as user types into the search box', function() {
-
-      var phoneList = element.all(by.repeater('phone in phones'));
-      var query = element(by.model('query'));
-
-      expect(phoneList.count()).toBe(20);
-
-      query.sendKeys('nexus');
-      expect(phoneList.count()).toBe(1);
-
-      query.clear();
-      query.sendKeys('motorola');
-      expect(phoneList.count()).toBe(8);
-    });
-
-
-    it('should be possible to control phone order via the drop down select box', function() {
-
-      var phoneNameColumn = element.all(by.repeater('phone in phones').column('{{phone.name}}'));
-      var query = element(by.model('query'));
-
-      function getNames() {
-        return phoneNameColumn.map(function(elm) {
-          return elm.getText();
-        });
-      }
-
-      query.sendKeys('tablet'); //let's narrow the dataset to make the test assertions shorter
-
-      expect(getNames()).toEqual([
-        "Motorola XOOM\u2122 with Wi-Fi",
-        "MOTOROLA XOOM\u2122"
-      ]);
-
-      element(by.model('orderProp')).element(by.css('option[value="name"]')).click();
-
-      expect(getNames()).toEqual([
-        "MOTOROLA XOOM\u2122",
-        "Motorola XOOM\u2122 with Wi-Fi"
-      ]);
-    });
-
-
     it('should render phone specific links', function() {
       var query = element(by.model('query'));
       query.sendKeys('nexus');
@@ -83,5 +39,18 @@ describe('PhoneCat App', function() {
     it('should display nexus-s page', function() {
       expect(element(by.binding('phone.name')).getText()).toBe('Nexus S');
     });
+
+    it('should display availbility', function() {
+      element.all(by.css('.availability dd')).then(function(dds){
+        expect(dds.length).toBe(7);
+        expect(dds[0].getText()).toBe("M1,");
+        expect(dds[1].getText()).toBe("O2,");
+        expect(dds[2].getText()).toBe("Orange,");
+        expect(dds[3].getText()).toBe("Singtel,");
+        expect(dds[4].getText()).toBe("StarHub,");
+        expect(dds[5].getText()).toBe("T-Mobile,");
+        expect(dds[6].getText()).toBe("Vodafone");
+      })
+    })
   });
 });
