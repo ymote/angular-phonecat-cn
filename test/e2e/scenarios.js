@@ -85,15 +85,16 @@ describe('PhoneCat App', function() {
     });
 
     it('should correctly display all 4 thumbnails for the phone', function() {
-      var thumbs = element.all(by.css('.phone-thumbs li img'));
       var imageUrls = ["img/phones/nexus-s.0.jpg",
         "img/phones/nexus-s.1.jpg",
         "img/phones/nexus-s.2.jpg",
         "img/phones/nexus-s.3.jpg" ];
       //thumbs是缩略图元素的合集，依次遍历并与imageUrls中的相对应的元素比较来测试ng-src的正确性
-      thumbs.forEach(function(thumbs,index){
-        //修改expect中的内容来获得ng-src
-        expect(thumbs[index].getAttribute('src')).toBe(imageUrls[index]);
+      element.all(by.css('.phone-thumbs li img')).then(function(thumbs){
+        thumbs.forEach(function(thumb,index){
+          //修改expect中的内容来获得ng-src
+          expect('获得ng-src中的内容').toBe(imageUrls[index]);
+        });
       });
     });
   });
