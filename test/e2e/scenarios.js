@@ -93,7 +93,7 @@ describe('PhoneCat App', function() {
       //thumbs是缩略图元素的合集，依次遍历并与imageUrls中的相对应的元素比较来测试ng-src的正确性
       thumbs.forEach(function(thumbs,index){
         //修改expect中的内容来获得ng-src
-        expect("拿到的ng-src的内容").toBe(imageUrls[index]);
+        expect(thumbs[index].getAttribute('src')).toBe(imageUrls[index]);
       });
     });
   });
