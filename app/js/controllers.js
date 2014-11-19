@@ -25,7 +25,10 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$h
     }
 
     //添加控制器方法$scope.hello,用alert显示欢迎信息
-
+    $scope.hello = function(){
+       alert('hello');
+    };
 
 
   }]);
+
