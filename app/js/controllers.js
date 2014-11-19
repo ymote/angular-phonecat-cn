@@ -24,10 +24,8 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$h
       $scope.mainImageUrl = imageUrl;
     }
 
-    //添加控制器方法$scope.hello,用alert显示欢迎信息
-    $scope.hello = function(){
-       alert('hello');
-    };
+    //添加控制器方法$scope.back,返回显示所有设备的页面
+
 
 
   }]);
