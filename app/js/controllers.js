@@ -13,8 +13,8 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
     $scope.orderProp = 'age';
   }]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http',
-  function($scope, $routeParams, $http) {
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', '$http', '$location',
+  function($scope, $routeParams, $http, $location) {
     $http.get('phones/' + $routeParams.phoneId + '.json').success(function(data) {
       $scope.phone = data;
       $scope.mainImageUrl = data.images[0];
