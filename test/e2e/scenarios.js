@@ -24,7 +24,7 @@ describe('PhoneCat App', function() {
       query.clear();
       query.sendKeys('motorola');
       //phoneList这时应该有几个phone?
-      expect(phoneList.count()).toBe(2);
+      expect(phoneList.count()).toBe(0);
     });
 
 
