@@ -68,7 +68,7 @@ describe('PhoneCat App', function() {
     it('should render phone specific links for motorola phones', function() {
       var query = element(by.model('query'));
       query.sendKeys('motorola');
-      //点击第一部手机的链接
+      //点击第一部手机的链接(css语法 nth-child(x) 可以用来选择第x个元素，具体用法请上网查询)
       //element(by.css('.phones li a')).click();
       browser.getLocationAbsUrl().then(function(url) {
         //现在网页的地址应该是什么呢？
