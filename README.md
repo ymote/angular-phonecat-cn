@@ -1,0 +1,5 @@
+为了说明angularJS如何增强了标准HTML，我们先将创建一个静态HTML页面模板，然后把这个静态HTML页面模板转换成能动态显示的AngularJS模板。
+
+在这个练习中，我们往HTML页面中添加两个手机的基本信息。可以看到静态模版直接使用HTML就行。Angular的理念就是尽可能基于HTML并加以扩张。
+
+既然我们已经知道HTML了为什么还要学习其它模版语言呢？像backbone,ember等框架使用handlebar来渲染页面，无疑增加了学习的负担。
