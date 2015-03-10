@@ -2,7 +2,7 @@
 
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
 
-describe('PhoneCat App', function() {
+describe('Test PhoneCat App', function() {
 
   describe('Phone list view', function() {
 
@@ -16,20 +16,23 @@ describe('PhoneCat App', function() {
       var phoneList = element.all(by.repeater('phone in phones'));
       var query = element(by.model('query'));
 
+      //When search box is empty, there should be 3 phones.
       expect(phoneList.count()).toBe(3);
 
       query.sendKeys('nexus');
+      //When user type in nexus, there should be 1 phone.
       expect(phoneList.count()).toBe(1);
 
       query.clear();
       query.sendKeys('motorola');
+      //When user type in motorola, there should be 2 phones.
       expect(phoneList.count()).toBe(2);
     });
 
 
     it('should display the current filter value within an element with id "status"',
       function() {
-      //找到ng-model=query的输入框
+      //find the input with ng-model=query
       var query = element(by.model('query'));
 
       expect('查询id为status的HTML元素的内容')
