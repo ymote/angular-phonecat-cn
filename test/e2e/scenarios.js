@@ -33,13 +33,13 @@ describe('Test PhoneCat App', function() {
       var query = element(by.model('query'));
 
       expect('查询id为status的HTML元素的内容')
-        .toMatch(/Current filter:\s*$/);
+        .toMatch(/Current filter:\s*/);
 
       //清空query的值并输入nexus
 
 
       expect('查询id为status的HTML元素的内容')
-        .toMatch(/Current filter: nexus\s*$/);
+        .toMatch(/Current filter:\s*nexus/);
     });
   });
 });
