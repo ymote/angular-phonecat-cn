@@ -16,16 +16,13 @@ describe('Test PhoneCat App', function() {
       var phoneList = element.all(by.repeater('phone in phones'));
       var query = element(by.model('query'));
 
-      //When search box is empty, there should be 3 phones.
       expect(phoneList.count()).toBe(3);
 
       query.sendKeys('nexus');
-      //When user type in nexus, there should be 1 phone.
       expect(phoneList.count()).toBe(1);
 
       query.clear();
       query.sendKeys('motorola');
-      //When user type in motorola, there should be 2 phones.
       expect(phoneList.count()).toBe(2);
     });
 
