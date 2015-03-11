@@ -1,7 +1,12 @@
 var HtmlReporter = require('protractor-html-screenshot-reporter');
+var fs = require('fs');
+var re = /\S+/;
+
+var myIP = re.exec(fs.readFileSync('/etc/hosts','utf8'))[0];
+var driverIP = '172.17.42.1';
 
 exports.config = {
-  seleniumAddress: 'http://localhost:4444/wd/hub',
+  seleniumAddress: 'http://'+driverIP+':4444/wd/hub',
 
   allScriptsTimeout: 11000,
 
@@ -31,19 +36,18 @@ exports.config = {
 
   //chromeOnly: false,
 
-  baseUrl: 'http://localhost:8000/',
+  baseUrl: 'http://'+myIP+':8000/',
 
   framework: 'jasmine',
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
   },
-
+  
   onPrepare: function() {
     // Add a screenshot reporter and store screenshots to `/tmp/screnshots`:
     jasmine.getEnv().addReporter(new HtmlReporter({
       baseDirectory: 'test_out'
     }));
   }
-
 };
