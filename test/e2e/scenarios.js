@@ -2,7 +2,7 @@
 
 /* http://docs.angularjs.org/guide/dev_guide.e2e-testing */
 
-describe('PhoneCat App', function() {
+describe('Test PhoneCat App', function() {
 
   describe('Phone list view', function() {
 
