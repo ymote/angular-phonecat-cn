@@ -8,4 +8,4 @@
 
   一个解决方案是使用ngBind或者ngBindTemplate指令
 
- ``` <title ng-bind-template="Google Phone Gallery: {{query}}">Google Phone Gallery</title>```
+ ``` <title ng-bind-template="Google Phone Gallery: {{query}}"></title>```
