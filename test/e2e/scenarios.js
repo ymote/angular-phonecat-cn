@@ -24,7 +24,7 @@ describe('Test PhoneCat App', function() {
       query.clear();
       query.sendKeys('motorola');
       //phoneList这时应该有几个phone?
-      expect(phoneList.count()).toBe(0);
+      expect(phoneList.count()).toBe(2);
     });
 
 
@@ -50,8 +50,8 @@ describe('Test PhoneCat App', function() {
 
       //观察页面，当我们按照名字来排列的时候，排列的顺序应该是什么？
       expect(getNames()).toEqual([
-        "",
-        ""
+        "Motorola XOOM™ with Wi-Fi",
+        "MOTOROLA XOOM™"
       ]);
     });
   });
