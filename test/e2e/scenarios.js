@@ -50,8 +50,8 @@ describe('Test PhoneCat App', function() {
 
       //观察页面，当我们按照名字来排列的时候，排列的顺序应该是什么？
       expect(getNames()).toEqual([
-        "Motorola XOOM™ with Wi-Fi",
-        "MOTOROLA XOOM™"
+        "MOTOROLA XOOM™",
+        "Motorola XOOM™ with Wi-Fi"
       ]);
     });
   });
