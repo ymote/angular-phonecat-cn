@@ -21,7 +21,7 @@ describe('PhoneCat controllers', function() {
 
     it('should set the default value of orderProp model', function() {
       //增加expect语句来判断orderProp的值为age
-
+      expect(scope.orderProp).toBe('age');
     });
   });
 });
