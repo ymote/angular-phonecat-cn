@@ -36,6 +36,8 @@ describe('Test PhoneCat App', function() {
         .toMatch(/Current filter:\s*/);
 
       //清空query的值并输入nexus
+      query.clear();
+      query.sendKeys('nexus');
       expect(element(by.css('#status')).getText())
         .toMatch(/Current filter:\s*nexus/);
     });
