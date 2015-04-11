@@ -32,13 +32,11 @@ describe('Test PhoneCat App', function() {
       //find the input with ng-model=query
       var query = element(by.model('query'));
 
-      expect('查询id为status的HTML元素的内容')
+      expect(element(by.css('#status')).getText())
         .toMatch(/Current filter:\s*/);
 
       //清空query的值并输入nexus
-
-
-      expect('查询id为status的HTML元素的内容')
+      expect(element(by.css('#status')).getText())
         .toMatch(/Current filter:\s*nexus/);
     });
   });
